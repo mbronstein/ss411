@@ -1,12 +1,12 @@
 from django.urls import path
 
-from ss411.ssoffices.views import SsOfficeDetailView, SsOfficeListView
+from ss411.ssoffices import views
 
 app_name = 'ssoffices'
 
 urlpatterns = [
-    path('', SsOfficeListView.as_view(), name='list'),
-    path('<slug:slug>/', SsOfficeDetailView.as_view(), name='detail'),
+    path('', views.SsOfficeListView.as_view(), name='list'),
+    path('<slug:slug>/', views.SsOfficeDetailView.as_view(), name='detail'),
 ]
 
 

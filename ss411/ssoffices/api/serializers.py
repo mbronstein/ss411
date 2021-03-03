@@ -9,7 +9,7 @@ class SsOfficeSerializer(serializers.ModelSerializer):
 
 
 class SsStaffSerializer(serializers.ModelSerializer):
+    ss_office = SsOfficeSerializer(read_only=True)
     class Meta:
         model = SsStaff
         fields = '__all__'
-

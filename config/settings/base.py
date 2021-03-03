@@ -87,6 +87,7 @@ THIRD_PARTY_APPS = [
     "django_comments",
     "csvimport.app.CSVImportConf",
     "taggit",
+    "django_tables2",
 
 ]
 
@@ -94,6 +95,7 @@ LOCAL_APPS = [
     "ss411.users.apps.UsersConfig",
     # Your stuff: custom apps go here
     "ss411.ssoffices.apps.SsofficesConfig",
+    "ss411.uploads.apps.UploadConfig",
 
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

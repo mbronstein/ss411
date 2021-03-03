@@ -9,6 +9,7 @@ from django.conf import settings
 from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 
+
 ROJurArray = None
 OHOJurArray = None
 DDSJurArray = None
@@ -131,9 +132,6 @@ class SsStaff(models.Model):
     tel_ext = models.CharField(max_length=20,
                                blank=True)
     email = models.EmailField(blank=True)
-    job_title = models.CharField(max_length=20,
-                                 choices=StaffTypes.choices,
-                                 blank=True)
     supervisor = models.ManyToManyField("SsStaff", blank=True)
     notes = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -150,7 +148,10 @@ class SsStaff(models.Model):
                                          )
 
     def __str__(self):
-        return f"{self.last_name}, {self.first_name}, {self.job_title},{self.display_name}"
+        return f"{self.last_name}, {self.first_name}, {self.staff_type},{self.ss_office}"
 
     def __repr__(self):
-        return f"{self.last_name}, {self.first_name}, {self.job_title}, {self.display_name}"
+        return f"{self.last_name}, {self.first_name}, {self.staff_type}, {self.ss_office}"
+
+    def display_name(self):
+        return f"{self.last_name}, {self.first_name}, {self.staff_type}"

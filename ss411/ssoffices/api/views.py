@@ -1,8 +1,7 @@
-from ..models import SsOffice, SsStaff
+from ss411.ssoffices.models import SsOffice, SsStaff
 from rest_framework.viewsets import ModelViewSet
 
-from .serializers import SsOfficeSerializer, SsStaffSerializer
-
+from ss411.ssoffices.api.serializers import SsOfficeSerializer, SsStaffSerializer
 
 class SsOfficeViewSet(ModelViewSet):
     serializer_class = SsOfficeSerializer

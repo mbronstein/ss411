@@ -1,11 +1,11 @@
-<h1>SS Offices</h1>
-
-====
-{{ request}}
-====
-
-<ul>
-{% for ssoffice in object_list %}
-    <li>{{ ssoffice.display_name}}  {{ssoffice.tel_public.as_national }}</li>
-{% endfor %}
-</ul>
+{% load django_tables2 %}
+{% load render_table from django_tables2 %}
+<!doctype html>
+<html>
+    <head>
+        <title>SSA Offices</title>
+    </head>
+    <body>
+        {% render_table object_list %}
+    </body>
+</html>
